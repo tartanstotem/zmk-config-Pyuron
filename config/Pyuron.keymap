@@ -1,22 +1,114 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
-#define MOUSE 6
+#define Base        0
+#define Nav         1
+#define Sym         2
+#define Fun         3
+#define Game        4
+#define Gameplus    5
 
-/ {
-    combos { compatible = "zmk,combos"; };
+&mt {
+    quick-tap-ms = <100>;
+    global-quick-tap;
+    flavor = "tap-preferred";
+    tapping-term-ms = <170>;
+};
+
+&lt {
+    tapping-term-ms = <240>;
+    flavor = "balanced";
+    quick-tap-ms = <150>;
 };
 
 / {
+    behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <125>;
+            global-quick-tap;
+            bindings = <&kp>, <&kp>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        mac_spotlight {
+            bindings = <&kp LG(SPACE)>;
+            key-positions = <11 12 13>;
+        };
+
+        Front {
+            bindings = <&kp LC(A)>;
+            key-positions = <1 0>;
+        };
+
+        End {
+            bindings = <&kp LC(E)>;
+            key-positions = <9 8>;
+        };
+
+        copy {
+            bindings = <&kp LG(C)>;
+            key-positions = <22 23>;
+        };
+
+        paste {
+            bindings = <&kp LG(V)>;
+            key-positions = <23 24>;
+        };
+
+        pastenoformat {
+            bindings = <&kp LA(LS(LG(V)))>;
+            key-positions = <23 24 25>;
+        };
+
+        escape {
+            bindings = <&kp ESCAPE>;
+            key-positions = <0 1 2 3>;
+        };
+
+        cut {
+            bindings = <&kp LG(X)>;
+            key-positions = <21 22 23>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        Main {
+            display-name = "Main";
             bindings = <
-&kp Q             &kp W      &kp E      &kp R         &kp T   &kp Y   &kp U          &kp I   &kp O              &kp P
-&kp A             &kp S      &kp D      &kp F         &kp G   &kp H   &kp J          &kp K   &kp L              &kp SQT
-&mt LEFT_SHIFT Z  &kp X      &kp C      &kp V         &kp B   &trans  &kp BACKSLASH  &kp N   &kp M              &kp COMMA
-&kp DOT           &kp SLASH  &kp LCTRL  &kp LEFT_WIN  &trans  &trans  &trans         &trans  &kp RIGHT_CONTROL  &kp DEL
+              &kp Q       &kp W       &kp E             &kp R         &kp T        &kp Y    &kp U        &kp I        &kp O       &kp P
+              &hm LGUI A  &hm LALT S  &hm LCTRL D       &hm LSHIFT F  &kp G        &kp H    &hm RSHFT J  &hm RCTRL K  &hm RALT L  &hm RGUI SEMICOLON
+&kp LA(LEFT)  &kp Z       &kp X       &kp C             &kp V         &kp B        &kp N    &kp M        &kp COMMA    &kp DOT     &kp SLASH           &kp LA(RIGHT)
+                                      &mt LEFT_GUI DEL  &lt 1 TAB     &kp SPACE    &kp RET  &lt 2 BSPC   &kp MINUS
+            >;
+        };
+
+        Nav {
+            display-name = "Nav";
+            bindings = <
+              &kp GRAVE       &kp TILDE  &kp UP_ARROW  &trans     &kp LBRC    &kp RBRC  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0
+              &kp LEFT_SHIFT  &kp LEFT   &kp DOWN      &kp RIGHT  &kp LBKT    &kp RBKT  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp MINUS
+&kp LEFT_ALT  &kp LEFT_WIN    &kp MINUS  &trans        &kp PLUS   &kp LPAR    &kp RPAR  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp KP_MULTIPLY  &kp PLUS
+                                         &trans        &trans     &trans      &trans    &trans        &kp DOT
+            >;
+        };
+
+        Sym {
+            display-name = "Sym";
+            bindings = <
+        &kp EXCL  &kp AT  &kp HASH  &kp DOLLAR  &kp PERCENT    &kp CARET  &kp AMPERSAND  &kp KP_ASTERISK  &kp SQT  &kp DQT
+        &trans    &trans  &trans    &trans      &trans         &trans     &trans         &trans           &trans   &trans
+&trans  &trans    &trans  &trans    &trans      &trans         &kp UNDER  &kp EQUAL      &trans           &trans   &kp BACKSLASH  &trans
+                          &trans    &trans      &trans         &trans     &trans         &trans
             >;
         };
     };
