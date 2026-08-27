@@ -109,7 +109,7 @@
 &kp EXCL       &kp AT  &kp HASH  &kp DOLLAR  &kp PERCENT  &kp CARET  &kp AMPERSAND  &kp KP_ASTERISK  &kp SQT  &kp DQT
 &trans         &trans  &trans    &trans      &trans       &trans     &trans         &trans           &trans   &trans
 &trans         &trans  &trans    &trans      &trans       &trans     &kp UNDER      &kp EQUAL        &trans   &trans
-&kp BACKSLASH  &trans  &trans    &trans      &trans       &trans     &trans         &trans           &kp D    &kp E
+&kp BACKSLASH  &trans  &kp O     &trans      &trans       &trans     &trans         &trans           &kp D    &kp E
             >;
         };
     };
