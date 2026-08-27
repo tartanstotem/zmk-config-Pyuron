@@ -1,5 +1,9 @@
 #include "Pyuron.dtsi"
 
+&kscan0 {
+    status = "disabled";
+};
+
 / {
     chosen {
         zmk,kscan = &mock_kscan;
