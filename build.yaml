@@ -6,7 +6,7 @@ include:
     shield: Pyuron_L rgbled_adapter
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
   - board: xiao_ble//zmk
-    shield: Pyuron_D dongle_screen
+    shield: Pyuron_D prospector_adapter
   - board: xiao_ble//zmk
     shield: settings_reset
  
