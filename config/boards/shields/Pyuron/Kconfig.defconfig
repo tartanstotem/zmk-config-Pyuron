@@ -1,3 +1,22 @@
+if SHIELD_PYURON_D
+
+config ZMK_KEYBOARD_NAME
+    default "TOTEM"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+config ZMK_USB
+    default y
+
+config ZMK_SPLIT
+    default y
+
+config ZMK_BLE
+    default y
+
+endif
+
 if SHIELD_PYURON_R
 
 config ZMK_KEYBOARD_NAME
@@ -11,7 +30,8 @@ config ZMK_POINTING
 
 config PAW3222
     default y
-config ZMK_SPLIT_ROLE_CENTRAL
+
+config ZMK_BLE
     default y
 
 endif
@@ -28,6 +48,9 @@ config ZMK_POINTING
     default y
 
 config PAW3222
+    default y
+
+config ZMK_BLE
     default y
 
 endif
