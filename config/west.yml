@@ -8,8 +8,8 @@ manifest:
       url-base: https://github.com/caksoylar  
     - name: sekigon-gonnoc
       url-base: https://github.com/sekigon-gonnoc
-    - name: janpfischer
-      url-base: https://github.com/janpfischer      
+    - name: carrefinho
+      url-base: https://github.com/carrefinho
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -21,8 +21,8 @@ manifest:
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: main
-    - name: zmk-dongle-screen
-      remote: janpfischer
-      revision: main      
+    - name: prospector-zmk-module
+      remote: carrefinho
+      revision: feat/new-status-screens
   self:
     path: config
