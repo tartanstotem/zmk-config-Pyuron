@@ -35,12 +35,11 @@
     };
 };
 
-&trackball_listener_L {
-    status = "okay";
+&trackball_split_L {
+    status = "disabled";
 };
 
-&trackball_listener_R {
-    status = "okay";
+&trackball_split_R {
     device = <&trackball_R>;
 };
 
