@@ -93,6 +93,11 @@
             bindings = <&kp MINUS>;
             key-positions = <19 18>;
         };
+
+        leftclick {
+            bindings = <&mkp LCLK>;
+            key-positions = <11 12>;
+        };
     };
 
     keymap {
