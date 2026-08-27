@@ -78,6 +78,11 @@
             bindings = <&kp LG(X)>;
             key-positions = <21 22 20>;
         };
+
+        rightclick {
+            bindings = <&mkp RCLK>;
+            key-positions = <25 35>;
+        };
     };
 
     keymap {
