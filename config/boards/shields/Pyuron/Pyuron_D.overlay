@@ -21,3 +21,11 @@
 &default_layout {
     kscan = <&mock_kscan>;
 };
+
+&trackball_listener_L {
+    status = "okay";
+};
+
+&trackball_listener_R {
+    status = "okay";
+};
