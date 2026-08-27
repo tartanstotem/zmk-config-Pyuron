@@ -1,9 +1,12 @@
 include:
   - board: xiao_ble//zmk
     shield: Pyuron_R rgbled_adapter
-    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
   - board: xiao_ble//zmk
     shield: Pyuron_L rgbled_adapter
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+  - board: xiao_ble//zmk
+    shield: Pyuron_D dongle_screen
   - board: xiao_ble//zmk
     shield: settings_reset
  
