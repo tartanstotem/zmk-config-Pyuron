@@ -134,7 +134,7 @@
             >;
         };
 
-        layer_3 {
+        Output {
             bindings = <
 &trans  &trans  &trans  &trans        &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans        &trans  &trans  &trans  &trans  &trans  &trans
